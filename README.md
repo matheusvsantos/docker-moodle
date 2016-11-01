@@ -1,4 +1,4 @@
-docker-moodle
+docker-moodle [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 =============
 
 A Dockerfile that installs and runs the latest Moodle stable.
