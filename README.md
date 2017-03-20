@@ -1,38 +1,29 @@
-docker-moodle [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+docker-moodle
 =============
 
-A Dockerfile that installs and runs the latest Moodle stable.
+A Dockerfile that installs and runs the latest Moodle 3.2 stable, with external MySQL Database and [Certificate Plugin](https://moodle.org/plugins/mod_customcert).
+
+Tags:
+* latest - stable
 
 ## Installation
 
 ```
-git clone https://github.com/jda/docker-moodle
-cd docker-moodle
-docker build -t moodle .
+wget https://raw.githubusercontent.com/matheusvsantos/docker-moodle/master/docker-compose.yml
+docker-compose up 
 ```
 
 ## Usage
 
-To spawn a new instance of Moodle:
-
-```
-docker run -d --name DB -p 3306:3306 -e MYSQL_DATABASE=moodle -e MYSQL_USER=moodle -e MYSQL_PASSWORD=moodle centurylink/mysql
-docker run -d -P --name moodle --link DB:DB -e MOODLE_URL=http://192.168.59.103:8080 -p 8080:80 jauer/moodle
-```
 
 You can visit the following URL in a browser to get started:
 
 ```
-http://192.168.59.103:8080 
+http://127.0.0.1:8080 
 ```
-
-## Caveats
-The following aren't handled, considered, or need work: 
-* moodle cronjob (should be called from cron container)
-* log handling (stdout?)
-* email (does it even send?)
 
 ## Credits
 
+This is a fork of [Jon Auer's](https://github.com/jda/docker-moodle) Dockerfile.
 This is a reductionist take on [sergiogomez](https://github.com/sergiogomez/)'s docker-moodle Dockerfile.
-
+This a fork of ['Alessandra de Melo e Silva'](https://github.com/alessandrams) Docker-Compose and DockerFile.
