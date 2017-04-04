@@ -9,7 +9,6 @@ Tags:
 ## Installation
 
 ```
-wget https://raw.githubusercontent.com/matheusvsantos/docker-moodle/master/docker-compose.yml
 docker-compose up 
 ```
 
